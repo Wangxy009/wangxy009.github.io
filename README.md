@@ -1,23 +1,28 @@
-# wangxy009.github.io — 王莺璇的个人网页简历
+# 个人简历与摄影预约页
 
-单文件双语在线简历：**中文为主，右上角一键切换 English 完整版**，适配 A4 打印 / 导出 PDF。
+王莺璇 Yingxuan Wang
 
-- 线上地址：https://wangxy009.github.io
-- 简历数据以《简历 1019.pdf》（2026-10-19 最新版）为准
+使用原生 HTML、CSS 与 JavaScript 实现的个人展示网页，包含中英双语简历和独立摄影预约页。
 
-## 使用
+| 页面 | 内容 | 入口 |
+| --- | --- | --- |
+| `index.html` | 中文简历、英文切换及 A4 打印样式 | [在线简历](https://wangxy009.github.io) |
+| `yuepai.html` | 摄影预约流程与客户需求单页面 | [摄影预约页](https://wangxy009.github.io/yuepai.html) |
 
-无需构建、零依赖，单文件 `index.html`：
+简历内容沿用仓库所记录的《简历 1019.pdf》（2026-10-19）版本。本次作品集整理未改动个人履历页面。
+
+## 本地查看
+
+在仓库根目录运行：
 
 ```bash
-# 本地预览
-open index.html
-# 或
 python3 -m http.server 8000
 ```
 
-页面右上角「打印 / 导出 PDF」按钮直接调用浏览器打印，打印样式已按 A4 调好。
+访问 `http://localhost:8000`，或直接打开相应 HTML 文件。无需构建和安装前端依赖。
 
-## 更新方法
+## 更新与打印
 
-直接编辑 `index.html`，中文内容在 `#cv-zh` 块、英文内容在 `#cv-en` 块，两处同步修改后 push 即可（GitHub Pages 自动发布，约 1 分钟生效）。
+`index.html` 的 `#cv-zh` 与 `#cv-en` 分别保存中文、英文内容，更新履历时应同步核对。页面右上角“打印 / 导出 PDF”调用浏览器打印，提供 A4 样式。
+
+仓库由 GitHub Pages 托管。摄影页面按当前静态页面实现展示，实际预约接收方式以页面配置为准。完整项目导航见 [GitHub 个人主页](https://github.com/Wangxy009)。
