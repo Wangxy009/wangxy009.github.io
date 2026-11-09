@@ -33,21 +33,15 @@
   .cv{display:none}
   .cv.active{display:block}
 
-  header{display:flex;align-items:flex-start;justify-content:space-between;gap:22px}
+  header{display:flex;align-items:center;gap:24px}
   header .info{flex:1;min-width:0}
-  .photo{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;
-    border:3px solid var(--accent-soft);box-shadow:0 3px 10px rgba(15,23,42,.14)}
+  .photo{width:112px;height:112px;border-radius:12px;object-fit:cover;flex-shrink:0;
+    border:1px solid var(--line);box-shadow:0 3px 12px rgba(15,23,42,.12)}
   header .name{font-size:30px;font-weight:700;letter-spacing:2px}
   header .name .en{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:1px;margin-left:10px}
-  .contact{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:6px;font-size:12.8px;color:var(--ink)}
+  .contact{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:7px;font-size:13px;color:var(--ink)}
   .contact a{color:var(--ink);text-decoration:none;border-bottom:1px dashed var(--line)}
   .contact a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-  .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .links a{
-    display:inline-flex;align-items:center;gap:4px;font-size:11.8px;color:var(--accent);
-    border:1px solid var(--accent);border-radius:999px;padding:2px 11px;text-decoration:none;
-  }
-  .links a:hover{background:var(--accent);color:#fff}
 
   section{margin-top:20px}
   h2{
@@ -67,6 +61,11 @@
   ul{list-style:none}
   ul li{position:relative;padding-left:13px;margin-bottom:3px;font-size:12.8px}
   ul li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  ul li b{color:var(--accent-deep)}
+  .meta a{color:var(--accent);text-decoration:none;font-weight:600}
+  .meta a:hover{border-bottom:1px solid var(--accent)}
+  .port-more{margin-top:10px;font-size:12.3px;color:var(--muted)}
+  .port-more a{color:var(--accent);text-decoration:none;font-weight:600}
   .award{display:inline-block;font-size:11px;color:var(--accent-deep);background:var(--accent-soft);
     border:1px solid #a5f3fc;border-radius:5px;padding:0 7px;margin-left:7px;vertical-align:1px;white-space:nowrap}
   .aw{font-weight:700;color:var(--accent-deep);background:var(--accent-soft);
@@ -103,47 +102,47 @@
 
   @media print{
     @page{size:A4;margin:9mm 11mm}
-    body{background:#fff;line-height:1.42}
+    body{background:#fff;line-height:1.5}
     .toolbar{display:none}
     .page{box-shadow:none;border-radius:0;margin:0;padding:0;max-width:none}
     .cv{display:none}.cv.active{display:block}
     section{break-inside:avoid}
-    ul li{break-inside:avoid;margin-bottom:2px}
-    section{margin-top:8px}
-    h2{margin-bottom:4px;font-size:13px}
-    .item{margin-bottom:5px}
+    ul li{break-inside:avoid;margin-bottom:3px}
+    section{margin-top:11px}
+    h2{margin-bottom:6px;font-size:13.5px}
+    .item{margin-bottom:8px}
     a{color:inherit;text-decoration:none;border:none}
-    .links a{border:1px solid #94a3b8;color:#334155}
-    footer{margin-top:8px}
+    footer{margin-top:10px}
     /* 打印字号显式覆盖（屏幕样式里的固定字号不响应 body） */
-    header .name{font-size:24px}
-    header .name .en{font-size:12px}
-    .contact{font-size:11.3px}
-    .links a{font-size:10.5px}
-    .item .role{font-size:12.3px}
-    .item .meta{font-size:10.8px}
-    .item .when{font-size:10.8px}
-    ul li{font-size:11.5px}
-    .oneliner{font-size:11.3px}
-    .award{font-size:9.8px}
-    .aw{font-size:9.6px}
-    .photo{width:62px;height:62px;border-width:2px}
-    .port .p{font-size:11px}
-    .port .p span{font-size:10.4px}
-    .compact{font-size:11px}
-    .skillrow{font-size:11px}
-    .note{font-size:10.3px}
-    html[lang="en"] body{line-height:1.34}
-    html[lang="en"] section{margin-top:7px}
-    html[lang="en"] ul li{font-size:10.6px}
-    html[lang="en"] .item .role{font-size:11.4px}
-    html[lang="en"] .item .meta{font-size:10px}
-    html[lang="en"] .contact{font-size:10.5px}
-    html[lang="en"] .port .p{font-size:10.3px}
-    html[lang="en"] .port .p span{font-size:9.8px}
-    html[lang="en"] .compact{font-size:10.3px}
-    html[lang="en"] .skillrow{font-size:10.3px}
-    html[lang="en"] .oneliner{font-size:10.6px}
+    header .name{font-size:25px}
+    header .name .en{font-size:12.5px}
+    .contact{font-size:11.8px}
+    .item .role{font-size:12.8px}
+    .item .meta{font-size:11.2px}
+    .item .when{font-size:11.2px}
+    ul li{font-size:12px}
+    .oneliner{font-size:11.8px}
+    .award{font-size:10px}
+    .aw{font-size:10px}
+    .photo{width:80px;height:80px}
+    header{gap:16px}
+    .port-more{margin-top:6px}
+    .port .p{font-size:11.5px}
+    .port .p span{font-size:10.8px}
+    .compact{font-size:11.5px}
+    .skillrow{font-size:11.5px}
+    .note{font-size:10.5px}
+    html[lang="en"] body{line-height:1.4}
+    html[lang="en"] section{margin-top:9px}
+    html[lang="en"] ul li{font-size:11px}
+    html[lang="en"] .item .role{font-size:11.8px}
+    html[lang="en"] .item .meta{font-size:10.4px}
+    html[lang="en"] .contact{font-size:10.9px}
+    html[lang="en"] .port .p{font-size:10.8px}
+    html[lang="en"] .port .p span{font-size:10.1px}
+    html[lang="en"] .compact{font-size:10.8px}
+    html[lang="en"] .skillrow{font-size:10.8px}
+    html[lang="en"] .oneliner{font-size:11px}
     -webkit-print-color-adjust:exact;print-color-adjust:exact;
   }
 </style>
@@ -161,6 +160,7 @@
 <!-- ================= 中文简历 ================= -->
 <main class="cv active" id="cv-zh">
   <header>
+    <img class="photo" src="photo.jpg" alt="证件照">
     <div class="info">
       <div class="name">王莺璇<span class="en">Yingxuan Wang</span></div>
       <div class="contact">
@@ -168,12 +168,7 @@
         <a href="mailto:yingxuan_wang24@163.com">✉️ yingxuan_wang24@163.com</a>
         <span>📍 武汉 ｜ 求职方向：AI 金融 · 数据 · 科技企业业务岗</span>
       </div>
-      <div class="links">
-        <a href="https://github.com/Wangxy009" target="_blank" rel="noopener">GitHub 作品集 ↗</a>
-        <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">工银智畜贷 在线 Demo ↗</a>
-      </div>
     </div>
-    <img class="photo" src="photo.jpg" alt="证件照">
   </header>
 
   <section>
@@ -194,11 +189,10 @@
       <div class="when">2025.08 – 2025.10</div>
       <div class="body">
         <div class="role">「工银智畜贷」活体资产抵押融资平台<span class="award">项目负责人</span></div>
-        <div class="meta">第十七届「工行杯」全国大学生金融科技创新大赛 · <b class="aw">省级二等奖</b></div>
+        <div class="meta">第十七届「工行杯」全国大学生金融科技创新大赛 · <b class="aw">省级二等奖</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">在线 Demo ↗</a></div>
         <ul>
-          <li>独立完成产品设计：面向中小奶牛牧场与合作社，设计覆盖受理 → 确权 → 估值 → 复核 → 放款 → 贷后监测 → 处置的活体抵押融资全流程方案，融合物联网、区块链与智能体技术，构建「机器算、LLM 说、人拍板」五道防线风控体系</li>
-          <li>独立开发可交互产品原型：客户端对话进件 + 银行端工单工作台双端联动，规则引擎、任务轨道、存证链真实可运行，236 例测试全部通过</li>
-          <li>统筹法学、计算机跨专业团队分工协作，组织答辩并承担方案汇报</li>
+          <li><b>产品设计</b>：独立设计「受理→确权→估值→复核→放款→贷后→处置」全流程，融合物联网+区块链+智能体，构建五道防线风控</li>
+          <li><b>产品开发</b>：独立开发双端可运行原型（对话进件+工单工作台），规则引擎、存证链真实落库，236 例测试全绿</li>
         </ul>
       </div>
     </div>
@@ -209,9 +203,8 @@
         <div class="role">初创企业五年财务预测与商业模式重构</div>
         <div class="meta">第十五届「挑战杯」海南省大学生创业计划竞赛 · <b class="aw">省级一等奖</b> ｜ 第十二届全国大学生能源经济学术创意大赛 · <b class="aw">湖北省二等奖</b></div>
         <ul>
-          <li>独立构建初创企业五年财务预测模型：完成同品类竞品调研与国内外对标，测算收入、成本、利润结构与敏感性，支撑方案财务可行性论证</li>
-          <li>基于产品创新优势重构商业模式与营销策略，主导商业计划书整体设计</li>
-          <li>担任主答辩人，承担多场竞赛问辩，面向评委阐释财务逻辑与技术方案</li>
+          <li><b>财务建模</b>：独立构建五年财务预测模型——竞品调研+国内外对标，收入/成本/敏感性分析支撑可行性论证</li>
+          <li><b>方案设计</b>：重构商业模式与营销策略，主导商业计划书，担任主答辩人完成多场问辩</li>
         </ul>
       </div>
     </div>
@@ -222,7 +215,7 @@
         <div class="role">「一日店长」消费行为与流量留存研究</div>
         <div class="meta">「正大杯」第十六届全国大学生市场调查与分析大赛 · <b class="aw">校赛二等奖</b></div>
         <ul>
-          <li>独立完成选题、项目概述与文献综述；设计并发放线上问卷，线下对泡泡玛特、书亦烧仙草等品牌实地调研，产出消费现状与流量留存分析</li>
+          <li><b>调研分析</b>：独立完成选题与文献综述，设计发放问卷，实地调研泡泡玛特、书亦烧仙草等品牌</li>
         </ul>
       </div>
     </div>
@@ -238,6 +231,7 @@
       <div class="p"><b><a href="https://github.com/Wangxy009/math-modeling-ai-assistant" target="_blank" rel="noopener">数模 AI 助手 ↗</a></b><span>建模竞赛 AI 辅助工具 + 14 天训练计划</span></div>
       <div class="p"><b><a href="https://github.com/Wangxy009/ielts-vocab-app" target="_blank" rel="noopener">雅思词汇 App ↗</a></b><span>22 章词汇单文件离线工具，双击即用</span></div>
     </div>
+    <div class="port-more">完整项目与源码：<a href="https://github.com/Wangxy009" target="_blank" rel="noopener">github.com/Wangxy009 ↗</a></div>
   </section>
 
   <section>
@@ -247,8 +241,8 @@
       <div class="body">
         <div class="role">武汉理工大学经济学院 <span style="font-weight:400;color:var(--muted);font-size:12.5px">· 2024 级年级长</span></div>
         <ul>
-          <li>组织金融系企业参访与院级趣味运动会；对接校外志愿团队，独立设计并开展院级环保志愿服务</li>
-          <li>负责学院新闻宣传：多篇新闻稿上稿湖北日报、长江头条及校媒平台</li>
+          <li><b>活动策划</b>：组织金融系企业参访、院级趣味运动会，独立设计并落地院级环保志愿服务</li>
+          <li><b>宣传</b>：多篇新闻稿上稿湖北日报、长江头条及校媒平台</li>
         </ul>
       </div>
     </div>
@@ -287,6 +281,7 @@
 <!-- ================= 英文简历 ================= -->
 <main class="cv" id="cv-en">
   <header>
+    <img class="photo" src="photo.jpg" alt="ID Photo">
     <div class="info">
       <div class="name">Yingxuan Wang<span class="en">王莺璇</span></div>
       <div class="contact">
@@ -294,12 +289,7 @@
         <a href="mailto:yingxuan_wang24@163.com">✉️ yingxuan_wang24@163.com</a>
         <span>📍 Wuhan, China ｜ Seeking: AI-Finance / Data / Business roles at tech startups</span>
       </div>
-      <div class="links">
-        <a href="https://github.com/Wangxy009" target="_blank" rel="noopener">GitHub Portfolio ↗</a>
-        <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">ICBC Smart Livestock Loan — Live Demo ↗</a>
-      </div>
     </div>
-    <img class="photo" src="photo.jpg" alt="ID Photo">
   </header>
 
   <section>
@@ -320,11 +310,10 @@
       <div class="when">Aug – Oct 2025</div>
       <div class="body">
         <div class="role">"ICBC Smart Livestock Loan" — live-asset collateral financing platform<span class="award">Team Leader</span></div>
-        <div class="meta">17th "ICBC Cup" National College FinTech Innovation Competition · <b class="aw">Provincial 2nd Prize</b></div>
+        <div class="meta">17th "ICBC Cup" National College FinTech Innovation Competition · <b class="aw">Provincial 2nd Prize</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">Live Demo ↗</a></div>
         <ul>
-          <li>Independently designed the product: a full loan workflow (intake → ownership verification → valuation → review → disbursement → post-loan monitoring → disposal) for dairy farms &amp; cooperatives, combining IoT, blockchain and agent tech with a five-line-of-defense risk system — "machines compute, LLM narrates, humans decide"</li>
-          <li>Independently built the interactive prototype: dual-end product (client-side conversational intake + bank-side work-order console) with a real rule engine, task tracks and hash-chained evidence; 236 test cases all green</li>
-          <li>Led a cross-disciplinary team (law &amp; computer science); organized defenses and delivered the presentation</li>
+          <li><b>Product design</b>: independently designed the full workflow (intake → verification → valuation → review → disbursement → post-loan → disposal) with IoT + blockchain + agents and a 5-line defense system</li>
+          <li><b>Product build</b>: independently built the dual-end prototype (chat intake + work-order console); rule engine &amp; hash-chain evidence; 236 test cases all green</li>
         </ul>
       </div>
     </div>
@@ -335,9 +324,8 @@
         <div class="role">Startup 5-Year Financial Forecast &amp; Business Model Redesign</div>
         <div class="meta">15th "Challenge Cup" Hainan College Entrepreneurship Competition · <b class="aw">Provincial 1st Prize</b> ｜ 12th National Energy Economics Creative Competition · <b class="aw">Provincial 2nd Prize</b></div>
         <ul>
-          <li>Independently built a 5-year financial forecast model: competitor research with domestic &amp; international benchmarking; revenue, cost, profit structure and sensitivity analysis backing the feasibility case</li>
-          <li>Restructured the business model and marketing strategy around product innovation; led the overall business plan design</li>
-          <li>Served as lead defender across multiple competition Q&amp;A sessions, presenting the financial logic to judges</li>
+          <li><b>Financial modeling</b>: independently built a 5-year forecast model — competitor research &amp; benchmarking, revenue/cost/sensitivity analysis</li>
+          <li><b>Solution design</b>: restructured business model &amp; marketing; led the business plan; lead defender in Q&amp;A sessions</li>
         </ul>
       </div>
     </div>
@@ -348,7 +336,7 @@
         <div class="role">"One-Day Store Manager" — consumption behavior &amp; traffic retention study</div>
         <div class="meta">16th "Zhengda Cup" National Market Research &amp; Analysis Competition · <b class="aw">University 2nd Prize</b></div>
         <ul>
-          <li>Independently chose the topic, wrote the overview &amp; literature review; designed &amp; distributed online questionnaires; conducted field research on Pop Mart, Sueasy and other brands</li>
+          <li><b>Research</b>: independently chose the topic &amp; wrote the literature review; designed/distributed questionnaires; field research on Pop Mart, Sueasy</li>
         </ul>
       </div>
     </div>
@@ -364,6 +352,7 @@
       <div class="p"><b><a href="https://github.com/Wangxy009/math-modeling-ai-assistant" target="_blank" rel="noopener">Math Modeling AI ↗</a></b><span>competition AI assistant + 14-day program</span></div>
       <div class="p"><b><a href="https://github.com/Wangxy009/ielts-vocab-app" target="_blank" rel="noopener">IELTS Vocab App ↗</a></b><span>offline single-file tool, 22 chapters</span></div>
     </div>
+    <div class="port-more">All projects &amp; source: <a href="https://github.com/Wangxy009" target="_blank" rel="noopener">github.com/Wangxy009 ↗</a></div>
   </section>
 
   <section>
@@ -373,8 +362,8 @@
       <div class="body">
         <div class="role">College of Economics, WUT <span style="font-weight:400;color:var(--muted);font-size:12.5px">· Year Representative (Class of 2024)</span></div>
         <ul>
-          <li>Organized company visits and the college sports meet; designed and delivered campus volunteer campaigns with community partners</li>
-          <li>Led campus media coverage; press releases featured by Hubei Daily and Changjiang Toutiao</li>
+          <li><b>Events</b>: organized company visits &amp; the college sports meet; designed and delivered volunteer campaigns</li>
+          <li><b>Media</b>: press releases featured by Hubei Daily, Changjiang Toutiao and campus media</li>
         </ul>
       </div>
     </div>
