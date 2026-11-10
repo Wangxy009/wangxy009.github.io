@@ -1,1 +1,420 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noarchive"><title>项目作品集</title><style>body{max-width:880px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;color:#182230;line-height:1.8}h1{font-size:36px}a{color:#2454b8}li{margin:14px 0}p{color:#475467}</style></head><body><h1>项目作品集</h1><p>金融科技、学习工具与成长管理的开发实践。</p><ul><li><a href="https://github.com/Wangxy009/my-growth-os">本地成长管理系统</a>：计划、学习记录、复盘与本地存储。</li><li><a href="https://github.com/Wangxy009/feishu-growth-os">飞书 AI 工作台</a>：多角色消息路由原型。</li><li><a href="https://github.com/Wangxy009/stat-study-app">统计复习台</a>：结构化题库、公式与自测。</li><li><a href="https://github.com/Wangxy009/modeling-study-hub">数模写作训练站</a>：14天写作训练与进度记录。</li><li><a href="https://github.com/Wangxy009/math-modeling-ai-assistant">数模协作工作区</a>：审题、实验与论文记录模板。</li><li><a href="https://github.com/Wangxy009/ielts-vocab-app">离线词汇工具</a>：单文件复习页面。</li></ul><p>公开页面不提供个人简历、照片、联系方式或私人论文。</p></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="王莺璇（Yingxuan Wang）的个人简历 — 武汉理工大学数理金融本科，AI 金融方向：项目经历、作品集与数据分析能力。">
+<title>王莺璇 — 个人简历</title>
+<style>
+  :root{
+    --ink:#1f2937; --muted:#64748b; --accent:#0e7490; --accent-deep:#155e75;
+    --accent-soft:#ecfeff; --line:#e5e7eb; --bg:#eef2f6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6; font-size:14px;
+  }
+  .toolbar{position:fixed;top:14px;right:14px;display:flex;gap:8px;z-index:10}
+  .toolbar button{
+    border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+    padding:6px 15px;font-size:13px;cursor:pointer;box-shadow:0 1px 3px rgba(15,23,42,.10);
+    transition:all .15s;
+  }
+  .toolbar button:hover{border-color:var(--accent);color:var(--accent)}
+  .toolbar button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .toolbar button.print{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
+  .toolbar button.print:hover{opacity:.9;color:#fff}
+
+  .page{
+    max-width:850px;margin:26px auto 60px;background:#fff;border-radius:10px;
+    box-shadow:0 6px 30px rgba(15,23,42,.08);padding:44px 54px 38px;
+  }
+  .cv{display:none}
+  .cv.active{display:block}
+
+  header{display:flex;align-items:center;gap:24px}
+  header .info{flex:1;min-width:0}
+  .photo{width:112px;height:112px;border-radius:12px;object-fit:cover;flex-shrink:0;
+    border:1px solid var(--line);box-shadow:0 3px 12px rgba(15,23,42,.12)}
+  header .name{font-size:30px;font-weight:700;letter-spacing:2px}
+  header .name .en{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:1px;margin-left:10px}
+  .contact{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:7px;font-size:13px;color:var(--ink)}
+  .contact a{color:var(--ink);text-decoration:none;border-bottom:1px dashed var(--line)}
+  .contact a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  section{margin-top:20px}
+  h2{
+    font-size:14.5px;color:var(--accent-deep);font-weight:700;
+    border-bottom:1.5px solid var(--accent);padding-bottom:4px;margin-bottom:10px;
+    display:flex;align-items:center;gap:7px;
+  }
+  h2::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px;display:inline-block}
+
+  .item{display:flex;gap:14px;margin-bottom:10px}
+  .item:last-child{margin-bottom:0}
+  .item .when{width:118px;flex-shrink:0;font-size:11.8px;color:var(--muted);padding-top:2px;line-height:1.5}
+  .item .body{flex:1;min-width:0}
+  .item .role{font-weight:700;font-size:14px}
+  .item .meta{color:var(--muted);font-size:12px;margin:1px 0 4px}
+  .item .meta a{color:var(--accent);text-decoration:none}
+  ul{list-style:none}
+  ul li{position:relative;padding-left:13px;margin-bottom:3px;font-size:12.8px}
+  ul li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  ul li b{color:var(--accent-deep)}
+  .meta a{color:var(--accent);text-decoration:none;font-weight:600}
+  .meta a:hover{border-bottom:1px solid var(--accent)}
+  .port-more{margin-top:10px;font-size:12.3px;color:var(--muted)}
+  .port-more a{color:var(--accent);text-decoration:none;font-weight:600}
+  .award{display:inline-block;font-size:11px;color:var(--accent-deep);background:var(--accent-soft);
+    border:1px solid #a5f3fc;border-radius:5px;padding:0 7px;margin-left:7px;vertical-align:1px;white-space:nowrap}
+  .aw{font-weight:700;color:var(--accent-deep);background:var(--accent-soft);
+    border:1px solid #a5f3fc;border-radius:5px;padding:0 6px;font-size:10.5px;white-space:nowrap}
+  .oneliner{font-size:12.8px}
+  .note{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+  /* 作品集网格 */
+  .port{display:grid;grid-template-columns:1fr 1fr;gap:5px 26px}
+  .port .p{font-size:12.3px;display:flex;gap:6px;align-items:baseline;break-inside:avoid}
+  .port .p b{white-space:nowrap;font-weight:600}
+  .port .p b a{color:var(--ink);text-decoration:none}
+  .port .p b a:hover{color:var(--accent)}
+  .port .p span{color:var(--muted);font-size:11.6px}
+
+  /* 荣誉 + 技能 紧凑行 */
+  .compact{font-size:12.3px;line-height:1.75}
+  .compact .lv{color:var(--muted)}
+  .skillrow{font-size:12.3px}
+  .skillrow b{color:var(--accent-deep)}
+
+  footer{margin-top:16px;padding-top:8px;border-top:1px solid var(--line);
+    font-size:10.5px;color:#9ca3af;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+
+  @media (max-width:640px){
+    .page{padding:22px 16px;margin:10px auto 24px}
+    header .name{font-size:24px}
+    header .name .en{display:block;margin-left:0;margin-top:2px}
+    .item{flex-direction:column;gap:2px}
+    .item .when{width:auto}
+    .port{grid-template-columns:1fr}
+    .toolbar{top:8px;right:8px}
+  }
+
+  @media print{
+    @page{size:A4;margin:9mm 11mm}
+    body{background:#fff;line-height:1.5}
+    .toolbar{display:none}
+    .page{box-shadow:none;border-radius:0;margin:0;padding:0;max-width:none}
+    .cv{display:none}.cv.active{display:block}
+    section{break-inside:avoid}
+    ul li{break-inside:avoid;margin-bottom:3px}
+    section{margin-top:11px}
+    h2{margin-bottom:6px;font-size:13.5px}
+    .item{margin-bottom:8px}
+    a{color:inherit;text-decoration:none;border:none}
+    footer{margin-top:10px}
+    /* 打印字号显式覆盖（屏幕样式里的固定字号不响应 body） */
+    header .name{font-size:25px}
+    header .name .en{font-size:12.5px}
+    .contact{font-size:11.8px}
+    .item .role{font-size:12.8px}
+    .item .meta{font-size:11.2px}
+    .item .when{font-size:11.2px}
+    ul li{font-size:12px}
+    .oneliner{font-size:11.8px}
+    .award{font-size:10px}
+    .aw{font-size:10px}
+    .photo{width:80px;height:80px}
+    header{gap:16px}
+    .port-more{margin-top:6px}
+    .port .p{font-size:11.5px}
+    .port .p span{font-size:10.8px}
+    .compact{font-size:11.5px}
+    .skillrow{font-size:11.5px}
+    .note{font-size:10.5px}
+    html[lang="en"] body{line-height:1.4}
+    html[lang="en"] section{margin-top:9px}
+    html[lang="en"] ul li{font-size:11px}
+    html[lang="en"] .item .role{font-size:11.8px}
+    html[lang="en"] .item .meta{font-size:10.4px}
+    html[lang="en"] .contact{font-size:10.9px}
+    html[lang="en"] .port .p{font-size:10.8px}
+    html[lang="en"] .port .p span{font-size:10.1px}
+    html[lang="en"] .compact{font-size:10.8px}
+    html[lang="en"] .skillrow{font-size:10.8px}
+    html[lang="en"] .oneliner{font-size:11px}
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button id="btn-zh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+  <button class="print" onclick="window.print()">打印 / 导出 PDF</button>
+</div>
+
+<div class="page">
+
+<!-- ================= 中文简历 ================= -->
+<main class="cv active" id="cv-zh">
+  <header>
+    <img class="photo" src="photo.jpg" alt="证件照">
+    <div class="info">
+      <div class="name">王莺璇<span class="en">Yingxuan Wang</span></div>
+      <div class="contact">
+        <a href="tel:18647263676">📞 186-4726-3676</a>
+        <a href="mailto:yingxuan_wang24@163.com">✉️ yingxuan_wang24@163.com</a>
+        <span>📍 武汉 ｜ 求职方向：AI 金融 · 数据 · 科技企业业务岗</span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>教育背景</h2>
+    <div class="item">
+      <div class="when">2024.09 – 2028.06</div>
+      <div class="body">
+        <div class="role">武汉理工大学 <span style="font-weight:400;color:var(--muted);font-size:12.5px">· 数理金融 · 本科</span></div>
+        <div class="oneliner" style="color:var(--muted);font-size:12.3px">主修课程：数学分析、高等代数、经济学、计量经济学、货币金融学、国际金融学、金融伦理等</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>项目经历</h2>
+
+    <div class="item">
+      <div class="when">2025.08 – 2025.10</div>
+      <div class="body">
+        <div class="role">「工银智畜贷」活体资产抵押融资平台<span class="award">项目负责人</span></div>
+        <div class="meta">第十七届「工行杯」全国大学生金融科技创新大赛 · <b class="aw">省级二等奖</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">在线 Demo ↗</a></div>
+        <ul>
+          <li><b>产品设计</b>：独立设计「受理→确权→估值→复核→放款→贷后→处置」全流程，融合物联网+区块链+智能体，构建五道防线风控</li>
+          <li><b>产品开发</b>：独立开发双端可运行原型（对话进件+工单工作台），规则引擎、存证链真实落库，236 例测试全绿</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2025.10 – 2026.06</div>
+      <div class="body">
+        <div class="role">初创企业五年财务预测与商业模式重构</div>
+        <div class="meta">第十五届「挑战杯」海南省大学生创业计划竞赛 · <b class="aw">省级一等奖</b> ｜ 第十二届全国大学生能源经济学术创意大赛 · <b class="aw">湖北省二等奖</b></div>
+        <ul>
+          <li><b>财务建模</b>：独立构建五年财务预测模型——竞品调研+国内外对标，收入/成本/敏感性分析支撑可行性论证</li>
+          <li><b>方案设计</b>：重构商业模式与营销策略，主导商业计划书，担任主答辩人完成多场问辩</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">2025.10 – 2026.03</div>
+      <div class="body">
+        <div class="role">「一日店长」消费行为与流量留存研究</div>
+        <div class="meta">「正大杯」第十六届全国大学生市场调查与分析大赛 · <b class="aw">校赛二等奖</b></div>
+        <ul>
+          <li><b>调研分析</b>：独立完成选题与文献综述，设计发放问卷，实地调研泡泡玛特、书亦烧仙草等品牌</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>作品集（个人开发 / AI 辅助）</h2>
+    <div class="port">
+      <div class="p"><b><a href="/yuepai.html" target="_blank" rel="noopener">约拍预约网页 ↗</a></b><span>独立设计预约流程与客户需求单</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/my-growth-os" target="_blank" rel="noopener">个人成长网页 ↗</a></b><span>目标 / 复盘 / 时间管理一体化页面</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/feishu-growth-os" target="_blank" rel="noopener">飞书成长 OS ↗</a></b><span>Node.js 对接飞书多维表格的自动化管理</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/stat-study-app" target="_blank" rel="noopener">数理统计复习系统 ↗</a></b><span>Flask 全栈：知识库 / 题库 / 测验 / 问答</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/math-modeling-ai-assistant" target="_blank" rel="noopener">数模 AI 助手 ↗</a></b><span>建模竞赛 AI 辅助工具 + 14 天训练计划</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/ielts-vocab-app" target="_blank" rel="noopener">雅思词汇 App ↗</a></b><span>22 章词汇单文件离线工具，双击即用</span></div>
+    </div>
+    <div class="port-more">完整项目与源码：<a href="https://github.com/Wangxy009" target="_blank" rel="noopener">github.com/Wangxy009 ↗</a></div>
+  </section>
+
+  <section>
+    <h2>校园经历</h2>
+    <div class="item">
+      <div class="when">2025.03 – 至今</div>
+      <div class="body">
+        <div class="role">武汉理工大学经济学院 <span style="font-weight:400;color:var(--muted);font-size:12.5px">· 2024 级年级长</span></div>
+        <ul>
+          <li><b>活动策划</b>：组织金融系企业参访、院级趣味运动会，独立设计并落地院级环保志愿服务</li>
+          <li><b>宣传</b>：多篇新闻稿上稿湖北日报、长江头条及校媒平台</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">2025.07 – 2025.08</div>
+      <div class="body">
+        <div class="role">湖北省随州市随县共青团委 <span style="font-weight:400;color:var(--muted);font-size:12.5px">· 支教教师（志愿者）</span></div>
+        <ul>
+          <li>担任三至六年级班主任，设计专属教学方案，开展科技科普、心理健康等系列课程</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>荣誉 &amp; 证书</h2>
+    <div class="compact">
+      🏅 经济学院最高荣誉·<b>济民奖</b> ｜ 2025–2026 学年单项奖学金 ｜ 厚德书院优秀学生干部 ｜ 院优秀学生干部<br>
+      📖 CET-6 ｜ 计算机二级 ｜ 金秋杯「舞动青春」校园舞蹈比赛校二等奖 ｜ UNIQUE 国际标准舞世界公开赛「优秀志愿者」
+    </div>
+  </section>
+
+  <section>
+    <h2>技能</h2>
+    <div class="skillrow">
+      <b>数据分析</b>：Excel、Stata 回归 ｜ <b>开发</b>：Python（Flask）、Node.js、AI 应用开发 ｜ <b>办公</b>：WPS、PPT ｜ <b>兴趣</b>：摄影、舞蹈、羽毛球、骑行
+    </div>
+  </section>
+
+  <footer>
+    <span>在线版：wangxy009.github.io</span>
+    <span>更新于 2026 年 11 月</span>
+  </footer>
+</main>
+
+<!-- ================= 英文简历 ================= -->
+<main class="cv" id="cv-en">
+  <header>
+    <img class="photo" src="photo.jpg" alt="ID Photo">
+    <div class="info">
+      <div class="name">Yingxuan Wang<span class="en">王莺璇</span></div>
+      <div class="contact">
+        <a href="tel:18647263676">📞 +86 186-4726-3676</a>
+        <a href="mailto:yingxuan_wang24@163.com">✉️ yingxuan_wang24@163.com</a>
+        <span>📍 Wuhan, China ｜ Seeking: AI-Finance / Data / Business roles at tech startups</span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="when">Sep 2024 – Jun 2028</div>
+      <div class="body">
+        <div class="role">Wuhan University of Technology <span style="font-weight:400;color:var(--muted);font-size:12.5px">· B.S. in Mathematical Finance</span></div>
+        <div class="oneliner" style="color:var(--muted);font-size:12.3px">Coursework: Mathematical Analysis, Advanced Algebra, Economics, Econometrics, Monetary and Financial Economics, International Finance, Financial Ethics</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="when">Aug – Oct 2025</div>
+      <div class="body">
+        <div class="role">"ICBC Smart Livestock Loan" — live-asset collateral financing platform<span class="award">Team Leader</span></div>
+        <div class="meta">17th "ICBC Cup" National College FinTech Innovation Competition · <b class="aw">Provincial 2nd Prize</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">Live Demo ↗</a></div>
+        <ul>
+          <li><b>Product design</b>: independently designed the full workflow (intake → verification → valuation → review → disbursement → post-loan → disposal) with IoT + blockchain + agents and a 5-line defense system</li>
+          <li><b>Product build</b>: independently built the dual-end prototype (chat intake + work-order console); rule engine &amp; hash-chain evidence; 236 test cases all green</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">Oct 2025 – Jun 2026</div>
+      <div class="body">
+        <div class="role">Startup 5-Year Financial Forecast &amp; Business Model Redesign</div>
+        <div class="meta">15th "Challenge Cup" Hainan College Entrepreneurship Competition · <b class="aw">Provincial 1st Prize</b> ｜ 12th National Energy Economics Creative Competition · <b class="aw">Provincial 2nd Prize</b></div>
+        <ul>
+          <li><b>Financial modeling</b>: independently built a 5-year forecast model — competitor research &amp; benchmarking, revenue/cost/sensitivity analysis</li>
+          <li><b>Solution design</b>: restructured business model &amp; marketing; led the business plan; lead defender in Q&amp;A sessions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">Oct 2025 – Mar 2026</div>
+      <div class="body">
+        <div class="role">"One-Day Store Manager" — consumption behavior &amp; traffic retention study</div>
+        <div class="meta">16th "Zhengda Cup" National Market Research &amp; Analysis Competition · <b class="aw">University 2nd Prize</b></div>
+        <ul>
+          <li><b>Research</b>: independently chose the topic &amp; wrote the literature review; designed/distributed questionnaires; field research on Pop Mart, Sueasy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portfolio (personal / AI-assisted builds)</h2>
+    <div class="port">
+      <div class="p"><b><a href="/yuepai.html" target="_blank" rel="noopener">Photo Booking Page ↗</a></b><span>booking flow + client requirements form</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/my-growth-os" target="_blank" rel="noopener">Personal Growth Page ↗</a></b><span>goals / retrospectives / time management</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/feishu-growth-os" target="_blank" rel="noopener">Feishu Growth OS ↗</a></b><span>Node.js automation on Feishu Bitable</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/stat-study-app" target="_blank" rel="noopener">Statistics Study App ↗</a></b><span>Flask full-stack: knowledge / quiz / Q&amp;A</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/math-modeling-ai-assistant" target="_blank" rel="noopener">Math Modeling AI ↗</a></b><span>competition AI assistant + 14-day program</span></div>
+      <div class="p"><b><a href="https://github.com/Wangxy009/ielts-vocab-app" target="_blank" rel="noopener">IELTS Vocab App ↗</a></b><span>offline single-file tool, 22 chapters</span></div>
+    </div>
+    <div class="port-more">All projects &amp; source: <a href="https://github.com/Wangxy009" target="_blank" rel="noopener">github.com/Wangxy009 ↗</a></div>
+  </section>
+
+  <section>
+    <h2>Campus Experience</h2>
+    <div class="item">
+      <div class="when">Mar 2025 – Present</div>
+      <div class="body">
+        <div class="role">College of Economics, WUT <span style="font-weight:400;color:var(--muted);font-size:12.5px">· Year Representative (Class of 2024)</span></div>
+        <ul>
+          <li><b>Events</b>: organized company visits &amp; the college sports meet; designed and delivered volunteer campaigns</li>
+          <li><b>Media</b>: press releases featured by Hubei Daily, Changjiang Toutiao and campus media</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">Jul – Aug 2025</div>
+      <div class="body">
+        <div class="role">Suixian County Youth League Committee, Hubei <span style="font-weight:400;color:var(--muted);font-size:12.5px">· Teaching Intern (Volunteer)</span></div>
+        <ul>
+          <li>Homeroom teacher for grades 3–6: designed teaching plans and delivered science &amp; mental health programs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Honors &amp; Certifications</h2>
+    <div class="compact">
+      🏅 <b>Jimin Award</b> — highest honor of College of Economics ｜ 2025–26 Scholarship ｜ Outstanding Student Leader ×2<br>
+      📖 CET-6 ｜ NCRE Level 2 ｜ "Golden Autumn Cup" dance 2nd Prize ｜ UNIQUE International Standard Dance World Open — Volunteer of the Year
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skillrow">
+      <b>Data</b>: Excel, Stata regression ｜ <b>Dev</b>: Python (Flask), Node.js, AI-assisted dev ｜ <b>Office</b>: WPS, PPT ｜ <b>Interests</b>: photography, dance, badminton, cycling
+    </div>
+  </section>
+
+  <footer>
+    <span>Online: wangxy009.github.io</span>
+    <span>Updated Nov 2026</span>
+  </footer>
+</main>
+
+</div>
+
+<script>
+function setLang(l){
+  document.documentElement.lang = (l==='en') ? 'en' : 'zh-CN';
+  document.getElementById('cv-zh').classList.toggle('active', l==='zh');
+  document.getElementById('cv-en').classList.toggle('active', l==='en');
+  document.getElementById('btn-zh').classList.toggle('on', l==='zh');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.title = (l==='en') ? 'Yingxuan Wang — Resume' : '王莺璇 — 个人简历';
+  try{ localStorage.setItem('cv-lang', l); }catch(e){}
+}
+try{
+  var _init = new URLSearchParams(location.search).get('lang') || localStorage.getItem('cv-lang') || 'zh';
+  setLang(_init);
+}catch(e){ setLang('zh'); }
+</script>
+</body>
+</html>
