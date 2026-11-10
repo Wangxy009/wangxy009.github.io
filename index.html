@@ -51,15 +51,15 @@
   }
   h2::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px;display:inline-block}
 
-  .item{display:flex;gap:14px;margin-bottom:10px}
+  .item{display:grid;grid-template-columns:118px 1fr;column-gap:14px;margin-bottom:10px}
   .item:last-child{margin-bottom:0}
   .item .when{width:118px;flex-shrink:0;font-size:11.8px;color:var(--muted);padding-top:2px;line-height:1.5}
-  .item .body{flex:1;min-width:0}
+  .item .body{min-width:0}
   .item .role{font-weight:700;font-size:14px}
-  .item .meta{color:var(--muted);font-size:12px;margin:1px 0 4px}
+  .item .meta{grid-column:1 / -1;color:var(--muted);font-size:12px;margin:1px 0 4px}
   .item .meta a{color:var(--accent);text-decoration:none}
   ul{list-style:none}
-  ul li{position:relative;padding-left:13px;margin-bottom:3px;font-size:12.8px}
+  ul li{position:relative;padding-left:13px;margin-bottom:3px;font-size:12.8px;text-wrap:pretty}
   ul li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
   ul li b{color:var(--accent-deep)}
   .meta a{color:var(--accent);text-decoration:none;font-weight:600}
@@ -94,7 +94,7 @@
     .page{padding:22px 16px;margin:10px auto 24px}
     header .name{font-size:24px}
     header .name .en{display:block;margin-left:0;margin-top:2px}
-    .item{flex-direction:column;gap:2px}
+    .item{grid-template-columns:1fr;column-gap:0;row-gap:2px}
     .item .when{width:auto}
     .port{grid-template-columns:1fr}
     .toolbar{top:8px;right:8px}
@@ -186,43 +186,51 @@
   </section>
 
   <section>
+    <h2>技能</h2>
+    <div class="skillrow">
+      <b>数据分析</b>：Python、Stata 回归分析、Excel（数据透视 / 函数）、SQL（学习中）<br>
+      <b>开发与工具</b>：Flask、Node.js、AI 应用开发、WPS、PPT
+    </div>
+  </section>
+
+  <section>
     <h2>项目经历</h2>
 
     <div class="item">
       <div class="when">2025.08 – 2025.10</div>
       <div class="body">
         <div class="role">「工银智畜贷」活体资产抵押融资平台<span class="award">项目负责人</span></div>
-        <div class="meta">第十七届「工行杯」全国大学生金融科技创新大赛 · <b class="aw">省级二等奖</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">在线 Demo ↗</a></div>
         <ul>
           <li><b>产品架构</b>：设计「确权—授信—监测—处置」全链路闭环，融合 IoT 实时数据、区块链存证、机器学习估值模型，采用“规则引擎+智能体辅助+人工审批”分层运行机制</li>
           <li><b>风控设计</b>：构建单牛多因子估值模型与风险评级体系，设计贷后多级预警规则引擎；完成三情景财务测算与商业逻辑验证</li>
           <li><b>原型开发</b>：独立完成客户端 H5 与银行端工作台双端可交互 Demo，覆盖进件、审批、预警全流程演示</li>
         </ul>
       </div>
+      <div class="meta">第十七届「工行杯」全国大学生金融科技创新大赛 · <b class="aw">省级二等奖</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">在线 Demo ↗</a></div>
     </div>
 
     <div class="item">
       <div class="when">2025.10 – 2026.06</div>
       <div class="body">
         <div class="role">磁航智造 — 数智化高效电磁阀国产化替代项目<span class="award">商业分析与财务负责人</span></div>
-        <div class="meta">第十五届「挑战杯」海南省大学生创业计划竞赛 · <b class="aw">省级一等奖</b> ｜ 第十二届全国大学生能源经济学术创意大赛 · <b class="aw">湖北省二等奖</b></div>
         <ul>
           <li><b>财务建模</b>：独立完成五年财务预测与多情景敏感性分析，搭建股权结构与多层级资本退出路径</li>
           <li><b>商业分析</b>：重构三层盈利模型，对标国际竞品完成差异化定位论证，输出完整商业计划书并主导多场路演答辩</li>
         </ul>
       </div>
+      <div class="meta"><span style="white-space:nowrap">第十五届「挑战杯」海南省大学生创业计划竞赛 · <b class="aw">省级一等奖</b></span> ｜ <span style="white-space:nowrap">第十二届全国大学生能源经济学术创意大赛 · <b class="aw">湖北省二等奖</b></span></div>
     </div>
 
     <div class="item">
       <div class="when">2025.10 – 2026.03</div>
       <div class="body">
         <div class="role">「一日店长」消费行为与流量留存研究<span class="award">数据分析与调研负责人</span></div>
-        <div class="meta">「正大杯」第十六届全国大学生市场调查与分析大赛 · <b class="aw">校赛二等奖</b></div>
         <ul>
           <li><b>调研设计</b>：基于 SOR 理论设计问卷指标体系，采用分层 PPS 抽样，线下拦截泡泡玛特、书亦烧仙草等品牌活动店铺，回收有效问卷 792 份并完成信效度检验</li>
           <li><b>量化分析</b>：构建二元 Logistic 回归识别长期品牌关系关键因素，运用 K-means 聚类划分四类用户画像，输出分层运营策略建议</li>
         </ul>
       </div>
+      <div class="meta">「正大杯」第十六届全国大学生市场调查与分析大赛 · <b class="aw">校赛二等奖</b></div>
     </div>
   </section>
 
@@ -248,6 +256,7 @@
         <ul>
           <li><b>活动策划</b>：组织金融系企业参访、院级趣味运动会，独立设计并落地院级环保志愿服务</li>
           <li><b>宣传</b>：多篇新闻稿上稿湖北日报、长江头条及校媒平台</li>
+          <li><b>志愿服务</b>：累计志愿服务时长 500+ 小时</li>
         </ul>
       </div>
     </div>
@@ -265,15 +274,7 @@
   <section>
     <h2>荣誉 &amp; 证书</h2>
     <div class="compact">
-      🏅 经济学院最高荣誉·<b>济民奖</b> ｜ 2025–2026 学年单项奖学金 ｜ 厚德书院优秀学生干部 ｜ 院优秀学生干部<br>
-      📖 CET-6 ｜ 计算机二级 ｜ 金秋杯「舞动青春」校园舞蹈比赛校二等奖 ｜ UNIQUE 国际标准舞世界公开赛「优秀志愿者」
-    </div>
-  </section>
-
-  <section>
-    <h2>技能</h2>
-    <div class="skillrow">
-      <b>数据分析</b>：Excel、Stata 回归 ｜ <b>开发</b>：Python（Flask）、Node.js、AI 应用开发 ｜ <b>办公</b>：WPS、PPT ｜ <b>兴趣</b>：摄影、舞蹈、羽毛球、骑行
+      🏅 经济学院最高荣誉·<b>济民奖</b> ｜ 单项奖学金 ｜ 优秀学生干部 ｜ 📖 CET-6 ｜ 计算机二级
     </div>
   </section>
 
@@ -309,43 +310,51 @@
   </section>
 
   <section>
+    <h2>Skills</h2>
+    <div class="skillrow">
+      <b>Data Analysis</b>: Python, Stata regression, Excel (pivot / functions), SQL (learning)<br>
+      <b>Dev &amp; Tools</b>: Flask, Node.js, AI-assisted development, WPS, PPT
+    </div>
+  </section>
+
+  <section>
     <h2>Projects</h2>
 
     <div class="item">
       <div class="when">Aug – Oct 2025</div>
       <div class="body">
         <div class="role">"ICBC Smart Livestock Loan" — live-asset collateral financing platform<span class="award">Team Leader</span></div>
-        <div class="meta">17th "ICBC Cup" National College FinTech Innovation Competition · <b class="aw">Provincial 2nd Prize</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">Live Demo ↗</a></div>
         <ul>
           <li><b>Product architecture</b>: designed the full-loop workflow (verification → valuation → monitoring → disposal), integrating IoT real-time data, blockchain evidence, and ML valuation models; adopted a tiered "rule engine + AI agent assist + human approval" mechanism</li>
           <li><b>Risk control</b>: built a multi-factor individual cattle valuation model and risk rating system; designed a multi-tier post-loan early-warning rule engine; completed 3-scenario financial projections and business logic validation</li>
           <li><b>Prototype</b>: independently built a dual-end interactive demo (client H5 + bank console), covering intake, approval, and alert workflows</li>
         </ul>
       </div>
+      <div class="meta">17th "ICBC Cup" National College FinTech Innovation Competition · <b class="aw">Provincial 2nd Prize</b> · <a href="https://icbc-livestock-loan.pages.dev" target="_blank" rel="noopener">Live Demo ↗</a></div>
     </div>
 
     <div class="item">
       <div class="when">Oct 2025 – Jun 2026</div>
       <div class="body">
         <div class="role">"Cihang Smart Manufacturing" — domestic high-speed solenoid valve substitution project<span class="award">Business Analysis &amp; Finance Lead</span></div>
-        <div class="meta">15th "Challenge Cup" Hainan College Entrepreneurship Competition · <b class="aw">Provincial 1st Prize</b> ｜ 12th National Energy Economics Creative Competition · <b class="aw">Provincial 2nd Prize</b></div>
         <ul>
           <li><b>Financial modeling</b>: independently built a 5-year financial forecast model with multi-scenario sensitivity analysis; designed equity structure and multi-tier capital exit paths</li>
           <li><b>Business analysis</b>: restructured a three-layer profit model; completed competitive benchmarking against international players; authored the full business plan and led multiple roadshow defenses</li>
         </ul>
       </div>
+      <div class="meta"><span style="white-space:nowrap">15th "Challenge Cup" Hainan College Entrepreneurship Competition · <b class="aw">Provincial 1st Prize</b></span> ｜ <span style="white-space:nowrap">12th National Energy Economics Creative Competition · <b class="aw">Provincial 2nd Prize</b></span></div>
     </div>
 
     <div class="item">
       <div class="when">Oct 2025 – Mar 2026</div>
       <div class="body">
         <div class="role">"One-Day Store Manager" — consumption behavior &amp; traffic retention study<span class="award">Data Analysis &amp; Research Lead</span></div>
-        <div class="meta">16th "Zhengda Cup" National Market Research &amp; Analysis Competition · <b class="aw">University 2nd Prize</b></div>
         <ul>
           <li><b>Research design</b>: built a questionnaire framework based on SOR theory; adopted stratified PPS sampling; conducted offline intercept surveys at Pop Mart, Sueasy etc.; collected 792 valid responses with reliability/validity tests</li>
           <li><b>Quantitative analysis</b>: built a binary logistic regression model to identify key drivers of long-term brand relationship; applied K-means clustering to segment 4 user personas; delivered tiered operation strategy recommendations</li>
         </ul>
       </div>
+      <div class="meta">16th "Zhengda Cup" National Market Research &amp; Analysis Competition · <b class="aw">University 2nd Prize</b></div>
     </div>
   </section>
 
@@ -371,6 +380,7 @@
         <ul>
           <li><b>Events</b>: organized company visits &amp; the college sports meet; designed and delivered volunteer campaigns</li>
           <li><b>Media</b>: press releases featured by Hubei Daily, Changjiang Toutiao and campus media</li>
+          <li><b>Volunteering</b>: total volunteer service: 500+ hours</li>
         </ul>
       </div>
     </div>
@@ -388,15 +398,7 @@
   <section>
     <h2>Honors &amp; Certifications</h2>
     <div class="compact">
-      🏅 <b>Jimin Award</b> — highest honor of College of Economics ｜ 2025–26 Scholarship ｜ Outstanding Student Leader ×2<br>
-      📖 CET-6 ｜ NCRE Level 2 ｜ "Golden Autumn Cup" dance 2nd Prize ｜ UNIQUE International Standard Dance World Open — Volunteer of the Year
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skillrow">
-      <b>Data</b>: Excel, Stata regression ｜ <b>Dev</b>: Python (Flask), Node.js, AI-assisted dev ｜ <b>Office</b>: WPS, PPT ｜ <b>Interests</b>: photography, dance, badminton, cycling
+      🏅 <b>Jimin Award</b> — highest honor of College of Economics ｜ Scholarship ｜ Outstanding Student Leader ｜ 📖 CET-6 ｜ NCRE Level 2
     </div>
   </section>
 
